@@ -1,12 +1,11 @@
-
-
-package symbolic;
+//package symbolic;
+import java.util.*;
 
 public abstract class Unary extends Sexpr {
 	Sexpr argument;
 
-	public Unary(sexpr a) {
-		argument = a;
+	public Unary(Sexpr a) {
+		this.argument = a;
 	}
 
 
@@ -14,8 +13,8 @@ public abstract class Unary extends Sexpr {
 		return getName() + "(" + argument.toString() + ")";
 	}
 
-	public priority() {
-
-	}
+	//public priority() {
+//
+//	}
 
 }

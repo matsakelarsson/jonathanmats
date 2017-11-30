@@ -1,7 +1,10 @@
+//package symbolic;
 import java.io.StreamTokenizer;
 import java.io.IOException;
 
-class Parser{
+//Parsing är när man översätter en sträng med tecken och ger den någon sorts mening.i. e en sekvens med tecken med olika operatorer. + = addition, * = multiplikation osv.
+
+public class Parser{
 	StreamTokenizer st;
 
 	public Parser(){
