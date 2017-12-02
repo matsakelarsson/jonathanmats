@@ -12,9 +12,11 @@ public class Addition extends Binary {
 		return 0;
 	}
 
-	public Sexpr eval(Map<String, Sexpr> map) {
+	public Sexpr eval(HashMap<String, Sexpr> variables) {
 		Sexpr result;
 		return result;
 	}
 
 }
+
+

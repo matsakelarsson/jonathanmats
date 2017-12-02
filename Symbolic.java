@@ -1,4 +1,4 @@
-import java.util.*;
+//import java.util.*;
 
 public class Symbolic{
 	
@@ -10,4 +10,19 @@ public class Symbolic{
 		}
 	}
 
+	public static Sexpr exp(Sexpr arg) {
+		if (arg.isConstant()) {
+			return new Constant(Math.exp(arg.getValue()));
+		} else {
+			return new Exp (arg);
+		}
+	}
+
+	public static Sexpr cos(Sexpr arg) {
+		if (arg.isConstant()) {
+			return new Constant(Math.cos(arg.getValue()));
+		} else {
+			return new Cos (arg);
+		}
+	}
 }

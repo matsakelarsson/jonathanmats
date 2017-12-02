@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Assignment extends Binary {
-	public Assignment (){				//Vet ej vad som ska tas?
+	public Assignment (Sexpr sum, Sexpr prod){				//Vet ej vad som ska tas?
 	}
 
 	public String getName() {

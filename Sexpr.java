@@ -1,5 +1,5 @@
 //package symbolic;
-import java.util.*;
+import java.util.HashMap;
 
 public abstract class Sexpr {
 
@@ -18,7 +18,7 @@ public abstract class Sexpr {
 		return false;
 	}
 
-	public abstract Sexpr eval(Map<String, Sexpr> map);
+	public abstract Sexpr eval(HashMap<String, Sexpr> variables);
 
 
 }
