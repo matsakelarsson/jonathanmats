@@ -5,6 +5,10 @@ public class Sin extends Unary {
 		super(arg);
 	}
 
+	public String toString() {
+		return "";
+	}
+
 	public String getName() {
 		return "";
 	}

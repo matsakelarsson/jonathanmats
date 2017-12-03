@@ -33,12 +33,10 @@ public class Parser{
 		Sexpr prod = factor();
 		while (st.nextToken() == '*' || st.nextToken() == '/'){
 			if(st.ttype == '*'){
-				sum = new Multiplication(sum, factor());
+				prod = new Multiplication(prod, factor());
+			}else{
+				prod = new Division(prod, factor());
 			}
-			else{
-				sum = new Division(sum, factor());
-			}
-			prod *= factor();
 		}
 		st.pushBack();
 		return prod;
@@ -58,7 +56,7 @@ public class Parser{
 		return result;
 	}
 
-	private Sexpr number() throws IOException{
+	private double number() throws IOException{
 		if(st.nextToken() != st.TT_NUMBER){
 			throw new SyntaxErrorException("Expected number");
 		}

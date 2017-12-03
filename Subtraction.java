@@ -4,6 +4,10 @@ public class Subtraction extends Binary {
 	public Subtraction(Sexpr sum, Sexpr prod) {			//Vet ej vad som ska tas
 	}
 
+	public String toString() {
+		return "";
+	}
+
 	public String getName() {
 		return "";
 	}

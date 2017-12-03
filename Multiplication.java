@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Multiplication extends Binary {
 
-	public Multiplication(Sexpr sum, Sexpr prod) { 		//Vet inte vad som ska tas
+	public Multiplication(Sexpr prod, Sexpr factor) { 		//Vet inte vad som ska tas
 	}
 
 	public String getName(){

@@ -2,10 +2,10 @@
 import java.util.*;
 
 public abstract class Unary extends Sexpr {
-	protected final Sexpr arg;
+	Sexpr arg;
 
-	public Unary(Sexpr a) {
-		this.arg = a;
+	public Unary(Sexpr arg) {
+		this.arg = arg;
 	}
 
 
