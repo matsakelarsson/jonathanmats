@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.HashMap;
 
 public class Cos extends Unary {
 	public Cos (Sexpr arg) {
