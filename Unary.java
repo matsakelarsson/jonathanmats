@@ -2,16 +2,16 @@
 import java.util.*;
 
 public abstract class Unary extends Sexpr {
-	Sexpr argument;
+	protected final Sexpr arg;
 
 	public Unary(Sexpr a) {
-		this.argument = a;
+		this.arg = a;
 	}
 
 
-	public String toString() {
-		return getName() + "(" + argument.toString() + ")";
-	}
+	//public String toString() {
+	//	return getName() + "(" + argument.toString() + ")";
+	//}
 
 	//public priority() {
 //

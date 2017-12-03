@@ -13,6 +13,9 @@ public abstract class Sexpr {
 		return 0;
 	}
 
+	public boolean isConstant() {
+		return false;
+	}
 
 	public boolean isConstant(double value){
 		return false;
