@@ -4,7 +4,7 @@ import java.io.IOException;
 class ParserDriver{
 	public static void main(String[] args){
 		Parser p = new Parser();
-		Map<String, Sexpr> variables = new HashMap<String, Sexpr>();
+		HashMap<String, Sexpr> variables = new HashMap<String, Sexpr>();
 
 
 		System.out.println("Welcome to the parser!");
@@ -12,7 +12,7 @@ class ParserDriver{
 		while (true)
 			try{
 				System.out.println("? ");
-				Sexpr e = p.statement();
+				Sexpr e = p.expression();
 				System.out.println("Inläst uttryck: " + e);
 				System.out.println(e.eval(variables));
 			}catch(SyntaxErrorException e){
