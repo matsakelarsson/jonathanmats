@@ -27,6 +27,14 @@ public class Symbolic{
 		}
 	}
 
+	public static Sexpr log(Sexpr arg) {
+		if (arg.isConstant()) {
+			return new Constant(Math.log(arg.getValue()));
+		} else {
+			return new Log(arg);
+		}
+	}
+
 	public static Sexpr addition(Sexpr left, Sexpr right) {
 		if (left.isConstant() && right.isConstant()) {
 			return new Constant(left.getValue() + right.getValue());

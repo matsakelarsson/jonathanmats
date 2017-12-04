@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 public class Sin extends Unary {
-	public Sin (Sexpr arg) {		//vet ej vad som tas?
+	public Sin (Sexpr arg) {	
 		super(arg);
 	}
 

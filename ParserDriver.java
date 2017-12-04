@@ -8,7 +8,7 @@ class ParserDriver{
 		System.out.print("Please enter an expression: ");
 		while (true)
 			try{
-				System.out.println("? " + result);
+				System.out.println("? ");
 				Sexpr e = p.statement();
 				System.out.println("Inläst uttryck: " + e);
 				System.out.println(e.eval(variables));
