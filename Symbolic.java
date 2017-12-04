@@ -3,6 +3,10 @@ import java.lang.Math;
 
 public class Symbolic{
 
+	public static Sexpr assignment(Sexpr left, Sexpr right) {
+		return left;
+	}
+
 	public static Sexpr sin(Sexpr arg) {
 		if (arg.isConstant()) {
 			return new Constant(Math.sin(arg.getValue()));
@@ -29,9 +33,17 @@ public class Symbolic{
 
 	public static Sexpr log(Sexpr arg) {
 		if (arg.isConstant()) {
-			return new Constant(Math.log(arg.getValue()));
+			return new Constant(Math.log10(arg.getValue()));
 		} else {
 			return new Log(arg);
+		}
+	}
+
+	public static Sexpr negation(Sexpr arg) {
+		if (arg.isConstant()) {
+			return new Constant(-(arg.getValue()));
+		} else {
+			return new Negation(arg);
 		}
 	}
 

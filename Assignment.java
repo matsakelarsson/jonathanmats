@@ -14,7 +14,13 @@ public class Assignment extends Binary {
 	}
 
 	public Sexpr eval(HashMap<String, Sexpr> variables) {
-		Sexpr result;
-		return result;
+		Sexpr assign = Symbolic.assignment(this.getLeft().eval(variables), this.getRight());
+		String character = this.getRight().toString();
+		if (variables.containsKey(character)) {
+			variables.remove(character);
+		}
+		variables.put(this.getRight().toString(), this.getLeft().eval(variables));
+
+		return assign; 
 	}
 }

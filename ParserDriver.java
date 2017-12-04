@@ -1,8 +1,11 @@
+import java.util.*;
 import java.io.IOException;
 
 class ParserDriver{
 	public static void main(String[] args){
 		Parser p = new Parser();
+		Map<String, Sexpr> variables = new HashMap<String, Sexpr>();
+
 
 		System.out.println("Welcome to the parser!");
 		System.out.print("Please enter an expression: ");
