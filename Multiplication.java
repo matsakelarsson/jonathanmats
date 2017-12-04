@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Multiplication extends Binary {
 
-	public Multiplication(Sexpr prod, Sexpr factor) { 		//Vet inte vad som ska tas
+	public Multiplication(Sexpr left, Sexpr right) {	//Vet inte vad som ska tas
+		super (left, right);
 	}
 
 	public String getName(){
@@ -14,8 +15,7 @@ public class Multiplication extends Binary {
 	}
 
 	public Sexpr eval(HashMap<String, Sexpr> variables) {
-		Sexpr result;
-		return result;
+		return Symbolic.multiplication(this.getLeft().eval(variables), this.getRight().eval(variables));
 	}
 
 }

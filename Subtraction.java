@@ -1,7 +1,8 @@
 import java.util.HashMap;
 
 public class Subtraction extends Binary {
-	public Subtraction(Sexpr sum, Sexpr prod) {			//Vet ej vad som ska tas
+	public Subtraction(Sexpr left, Sexpr right) {		//Vet ej vad som ska tas
+		super (left, right);
 	}
 
 	public String toString() {
@@ -17,7 +18,6 @@ public class Subtraction extends Binary {
 	}
 
 	public Sexpr eval(HashMap<String, Sexpr> variables) {
-		Sexpr result;
-		return result;
+		return Symbolic.subtraction(this.getLeft().eval(variables), this.getRight().eval(variables));
 	}
 }

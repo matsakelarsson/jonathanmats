@@ -1,7 +1,8 @@
 import java.util.*;
 
 public class Addition extends Binary {
-	public Addition(Sexpr sum, Sexpr prod) {		//Vet ej vad som ska tas?
+	public Addition(Sexpr left, Sexpr right) {		//Vet ej vad som ska tas?
+		super (left, right);
 	}
 
 	public String getName() {
@@ -13,8 +14,7 @@ public class Addition extends Binary {
 	}
 
 	public Sexpr eval(HashMap<String, Sexpr> variables) {
-		Sexpr result;
-		return result;
+		return Symbolic.addition(this.getLeft().eval(variables), this.getRight().eval(variables));
 	}
 
 }

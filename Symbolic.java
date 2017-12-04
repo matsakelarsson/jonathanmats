@@ -26,4 +26,39 @@ public class Symbolic{
 			return new Cos(arg);
 		}
 	}
+
+	public static Sexpr addition(Sexpr left, Sexpr right) {
+		if (left.isConstant() && right.isConstant()) {
+			return new Constant(left.getValue() + right.getValue());
+		} else {
+			return new Addition(left, right);
+		}
+	}
+
+
+	public static Sexpr subtraction(Sexpr left, Sexpr right) {
+		if (left.isConstant() && right.isConstant()) {
+			return new Constant(left.getValue() - right.getValue());
+		} else {
+			return new Subtraction(left, right);
+		}
+	}
+
+
+	public static Sexpr multiplication(Sexpr left, Sexpr right) {
+		if (left.isConstant() && right.isConstant()) {
+			return new Constant(left.getValue() * right.getValue());
+		} else {
+			return new Multiplication(left, right);
+		}
+	}
+
+
+	public static Sexpr division(Sexpr left, Sexpr right) {
+		if (left.isConstant() && right.isConstant()) {
+			return new Constant(left.getValue() / right.getValue());
+		} else {
+			return new Division(left, right);
+		}
+	}
 }

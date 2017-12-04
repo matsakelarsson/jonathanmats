@@ -1,7 +1,8 @@
 import java.util.*;
 
 public class Division extends Binary {
-	public Division(Sexpr sum, Sexpr prod) {		//Vet ej vad som ska tas
+	public Division(Sexpr left, Sexpr right) {	//Vet ej vad som ska tas
+		super(left, right);
 	}
 
 	public String getName() {
@@ -13,8 +14,7 @@ public class Division extends Binary {
 	}
 
 	public Sexpr eval(HashMap<String, Sexpr> variables) {
-		Sexpr result;
-		return result;
+		return Symbolic.division(this.getLeft().eval(variables), this.getRight().eval(variables));
 	}
 
 }

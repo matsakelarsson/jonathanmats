@@ -9,9 +9,9 @@ public abstract class Unary extends Sexpr {
 	}
 
 
-	//public String toString() {
-	//	return getName() + "(" + argument.toString() + ")";
-	//}
+	public String toString() {
+		return getName() + "(" + arg.toString() + ")";
+	}
 
 	//public priority() {
 //

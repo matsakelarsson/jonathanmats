@@ -20,8 +20,7 @@ public class Constant extends Atom {
 	}
 
 	public Sexpr eval(HashMap<String, Sexpr> variables) {
-		Sexpr result;
-		return result;
+		return this;
 	}
 
 }

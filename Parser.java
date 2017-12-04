@@ -56,11 +56,11 @@ public class Parser{
 		return result;
 	}
 
-	private double number() throws IOException{
+	private Sexpr number() throws IOException{
 		if(st.nextToken() != st.TT_NUMBER){
 			throw new SyntaxErrorException("Expected number");
 		}
-		return st.nval;
+		return new Constant(st.nval);
 	}
 }
 
