@@ -1,5 +1,5 @@
 all:
-	javac *.java
+	javac *.java -Xlint:deprecation
 
 clean:
 	rm -f *.class
