@@ -10,7 +10,7 @@ public class Subtraction extends Binary {
 	}
 
 	public String getName() {
-		return "";
+		return "-";
 	}
 
 	public int priority() {

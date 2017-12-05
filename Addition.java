@@ -12,11 +12,11 @@ public class Addition extends Binary {
 	public int priority() {
 		return 0;
 	}
-
+    
 	public Sexpr eval(HashMap<String, Sexpr> variables) {
 		return Symbolic.addition(this.getLeft().eval(variables), this.getRight().eval(variables));
 	}
-
+    
 }
 
 
