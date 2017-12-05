@@ -6,7 +6,7 @@ public class Division extends Binary {
 	}
 
 	public String getName() {
-		return "";
+		return "/";
 	}
 
 	public int priority() {
