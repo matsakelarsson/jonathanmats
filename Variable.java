@@ -7,6 +7,10 @@ public class Variable extends Atom {
 		this.name = name;
 	}
 
+	public boolean isConstant() {
+		return false;
+	}
+
 	public String getName() {
 		return name;
 	}

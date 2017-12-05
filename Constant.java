@@ -15,6 +15,10 @@ public class Constant extends Atom {
 		return this.value;
 	}
 
+	public boolean isConstant() {
+		return true;
+	}
+
 	public Sexpr eval(HashMap<String, Sexpr> variables) {
 		return this;
 	}

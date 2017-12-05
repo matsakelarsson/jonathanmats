@@ -14,6 +14,10 @@ public abstract class Binary extends Sexpr {
 		return this.left;
 	}
 
+	public boolean isConstant() {
+		return true;
+	}
+
 	public Sexpr getRight() {
 		return this.right;
 	}

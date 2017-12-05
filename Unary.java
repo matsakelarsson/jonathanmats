@@ -8,6 +8,10 @@ public abstract class Unary extends Sexpr {
 		this.arg = arg;
 	}
 
+	public boolean isConstant() {
+		return true;
+	}
+
 
 	public String toString() {
 		return getName() + "(" + arg.toString() + ")";

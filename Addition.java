@@ -9,6 +9,10 @@ public class Addition extends Binary {
 		return "+";
 	}
 
+	//public boolean isConstant() {
+	//	return true;
+	//}
+
 	public int priority() {
 		return 0;
 	}
