@@ -11,10 +11,11 @@ class ParserDriver{
 		System.out.print("Please enter an expression: ");
 		while (true)
 			try{
-				System.out.println("? ");
+				System.out.print("\n? ");
 				Sexpr e = p.expression();
-				System.out.println("Inläst uttryck: " + e);
-				System.out.println(e.eval(variables));
+				System.out.println("Inläst uttryck: " + e.toString());
+				Sexpr evaluated = e.eval(variables);
+				System.out.println(evaluated.toString());
 			}catch(SyntaxErrorException e){
 				System.out.print("Syntax Error: ");
 				System.out.println(e.getMessage());

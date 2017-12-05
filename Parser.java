@@ -16,8 +16,7 @@ public class Parser{
 	public Sexpr expression() throws IOException{
 		Sexpr sum = term();
 		st.nextToken();
-		while (st.ttype == '+' || st.ttype == '-'){
-			int operation = st.ttype;
+		while (st.nextToken() == '+' || st.nextToken() == '-'){
 			if(st.ttype == '+'){
 				sum = new Addition(sum, term());
 			}else{
@@ -31,7 +30,7 @@ public class Parser{
 
 	private Sexpr term() throws IOException{
 		Sexpr prod = factor();
-		while (st.nextToken() == '*' || st.nextToken() == '/'){
+		while (st.ttype == '*' || st.ttype == '/'){
 			if(st.ttype == '*'){
 				prod = new Multiplication(prod, factor());
 			}else{
@@ -53,6 +52,7 @@ public class Parser{
 				throw new SyntaxErrorException("expected ')'");
 			}
 		}
+		st.pushBack();
 		return result;
 	}
 

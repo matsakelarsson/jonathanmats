@@ -8,13 +8,9 @@ public class Constant extends Atom {
 	}
 
 	public String getName() {
-		return "";
+		return "" + this.value;
 	}
 	
-	public String toString() {
-		return "";
-	}
-
 	public double getValue() {
 		return this.value;
 	}

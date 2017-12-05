@@ -5,12 +5,8 @@ public class Sin extends Unary {
 		super(arg);
 	}
 
-	public String toString() {
-		return "";
-	}
-
 	public String getName() {
-		return "";
+		return "sin";
 	}
 
 	public Sexpr eval(HashMap<String, Sexpr> variables) {

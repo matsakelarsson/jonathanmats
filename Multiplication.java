@@ -7,7 +7,7 @@ public class Multiplication extends Binary {
 	}
 
 	public String getName(){
-		return "";
+		return "*";
 	}
 
 	public int priority() {

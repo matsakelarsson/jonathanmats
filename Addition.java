@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class Addition extends Binary {
-	public Addition(Sexpr left, Sexpr right) {		//Vet ej vad som ska tas?
+	public Addition(Sexpr left, Sexpr right) {		
 		super (left, right);
 	}
 
 	public String getName() {
-		return "";
+		return "+";
 	}
 
 	public int priority() {

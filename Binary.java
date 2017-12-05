@@ -19,7 +19,7 @@ public abstract class Binary extends Sexpr {
 	}
 
 	public String toString() {
-		return getName() + "(" + left.toString() + right.toString() + ")";	
+		return "(" + left.toString() + getName() + right.toString() + ")";	
 	}
 
 }

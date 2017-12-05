@@ -1,12 +1,12 @@
 //package symbolic;
-import java.util.HashMap;
+import java.util.*;
 
 public abstract class Sexpr {
 
 	public abstract String getName();
 
 	public double getValue(){
-		return 0;
+		throw new RuntimeException ("Illegal call to getValue()");
 	}
 
 	public int priority(){
@@ -14,11 +14,7 @@ public abstract class Sexpr {
 	}
 
 	public boolean isConstant() {
-		return false;
-	}
-
-	public boolean isConstant(double value){
-		return false;
+		return true;
 	}
 
 	public abstract Sexpr eval(HashMap<String, Sexpr> variables);
