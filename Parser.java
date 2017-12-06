@@ -33,14 +33,12 @@ public class Parser{
 
     private Sexpr term() throws IOException{
         Sexpr prod = factor();
-        st.nextToken();
         while(st.nextToken() == '*'){
             prod = new Multiplication(prod, factor());
         }
         st.pushBack();
 
         while(st.nextToken() == '/'){
-            System.out.println("I division");
             prod = new Division(prod, factor());
         }
         st.pushBack();
@@ -58,13 +56,15 @@ public class Parser{
                 throw new SyntaxErrorException("expected ')'");
             }
         }
-        st.pushBack();
         return result;
     }
 
     private Sexpr number() throws IOException{
         if(st.nextToken() != st.TT_NUMBER){
-            throw new SyntaxErrorException("Expected number");
+            st.pushBack();
+            if(st.nextToken() != st.TT_EOL){
+                throw new SyntaxErrorException("Expected number!");
+            }
         }
         return new Constant(st.nval);
     }
