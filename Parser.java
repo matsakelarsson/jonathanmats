@@ -49,8 +49,16 @@ public class Parser{
         Sexpr result;
         if(st.nextToken() != '('){
             st.pushBack();
-            result = number();
-        }else{
+            if(st.nextToken() == st.TT_WORD){
+                result = unary();
+            }
+            else{
+                st.pushBack();
+                result = number();
+            }
+        }
+       
+        else{
             result = expression();
             if(st.nextToken() != ')'){
                 throw new SyntaxErrorException("expected ')'");
@@ -68,7 +76,29 @@ public class Parser{
         }
         return new Constant(st.nval);
     }
+
+    private Sexpr unary() throws IOException{
+        switch(st.sval){
+        case "cos": st.nextToken();
+            System.out.println("cos: " + st.nval);
+            return new Constant(Math.cos(st.nval));
+        case "sin": st.nextToken();
+            return new Constant(Math.sin(st.nval));
+            
+        case "log": st.nextToken();
+            return new Constant(Math.log(st.nval));
+            
+        case "exp": st.nextToken();
+            return new Constant(Math.exp(st.nval));            
+
+        return new Constant(st.nval);
+
+    }
 }
+
+
+
+
 
 class SyntaxErrorException extends RuntimeException{
     public SyntaxErrorException(){
