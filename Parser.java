@@ -77,25 +77,27 @@ public class Parser{
         return new Constant(st.nval);
     }
 
-    private Sexpr unary() throws IOException{
+    private Sexpr unary() throws IOException{        
         switch(st.sval){
-        case "cos": st.nextToken();
+        case "cos":
             System.out.println("cos: " + st.nval);
-            return new Constant(Math.cos(st.nval));
-        case "sin": st.nextToken();
-            return new Constant(Math.sin(st.nval));
+            return new Cos(number());
+        case "sin":
+            return new Sin(number());
             
-        case "log": st.nextToken();
-            return new Constant(Math.log(st.nval));
+        case "log":
+            return new Log(number());
             
-        case "exp": st.nextToken();
-            return new Constant(Math.exp(st.nval));            
+        case "exp":
+            return new Exp(number());            
 
-        return new Constant(st.nval);
-
+        case "neg":
+            return new Negation(number());
+        default:   
+            throw new SyntaxErrorException("Unary operation expected.");
     }
 }
-
+}
 
 
 
