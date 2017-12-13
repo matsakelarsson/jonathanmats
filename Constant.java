@@ -23,4 +23,6 @@ public class Constant extends Atom {
 		return this;
 	}
 
+	
+
 }

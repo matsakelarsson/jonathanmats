@@ -5,12 +5,8 @@ public class Negation extends Unary {
 		super(arg);
 	}
 
-	public String toString() {
-		return "";
-	}
-
 	public String getName() {
-		return "";
+		return "-";
 	}
 
 	public Sexpr eval(HashMap<String, Sexpr> variables) {

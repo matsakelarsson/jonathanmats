@@ -13,7 +13,11 @@ public abstract class Sexpr {
 		return 0;
 	}
 
-	abstract boolean isConstant();
+	public abstract boolean isConstant();
+
+	public abstract boolean isQuit();
+
+	public abstract boolean isVars();
 
 	public abstract Sexpr eval(HashMap<String, Sexpr> variables);
 

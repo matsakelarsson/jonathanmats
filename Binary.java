@@ -15,7 +15,7 @@ public abstract class Binary extends Sexpr {
 	}
 
 	public boolean isConstant() {
-		return true;
+		return false;
 	}
 
 	public Sexpr getRight() {
@@ -24,6 +24,14 @@ public abstract class Binary extends Sexpr {
 
 	public String toString() {
 		return "(" + left.toString() + getName() + right.toString() + ")";	
+	}
+
+	public boolean isQuit() {
+		return false;
+	}
+
+	public boolean isVars() {
+		return false;
 	}
 
 }

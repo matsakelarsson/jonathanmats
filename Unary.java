@@ -8,8 +8,16 @@ public abstract class Unary extends Sexpr {
 		this.arg = arg;
 	}
 
+	public boolean isVars() {
+		return false;
+	}
+
+	public boolean isQuit() {
+		return false;
+	}
+
 	public boolean isConstant() {
-		return true;
+		return false;
 	}
 
 
