@@ -39,7 +39,7 @@ public class Parser{
 		if (st.ttype == '=') {
 			st.nextToken();
 			if (st.ttype == st.TT_WORD && st.sval.length() == 1) {
-		
+
 				ass = new Assignment(ass, new Variable(st.sval));
 			} else {
 				throw new SyntaxErrorException ("Expected variable");
@@ -50,17 +50,16 @@ public class Parser{
 
 	}
 
+
 	public Sexpr expression() throws IOException{
 		Sexpr sum = term();
-		st.nextToken();
-		if(st.ttype == '+' || st.ttype == '-'){
-			if(st.ttype == '+') {
-				sum = new Addition(sum, term());
+		while(st.nextToken() == '+'){
+			sum = new Addition(sum, term());
+		}
+		st.pushBack();
 
-			}
-			else if (st.ttype == '-') {
-				sum = new Subtraction(sum, term());
-			}
+		while(st.nextToken() == '-'){
+			sum = new Subtraction(sum, term());
 		}
 		st.pushBack();
 
@@ -71,11 +70,12 @@ public class Parser{
 
 	private Sexpr term() throws IOException{
 		Sexpr prod = factor();
-		st.nextToken();
-		if(st.ttype == '*'){
+		while(st.nextToken() == '*'){
 			prod = new Multiplication(prod, factor());
 		}
-		else if(st.ttype == '/'){
+		st.pushBack();
+
+		while(st.nextToken() == '/'){
 			prod = new Division(prod, factor());
 		}
 		st.pushBack();
@@ -149,8 +149,8 @@ public class Parser{
 
 	}
 
-
 }
+
 
 class SyntaxErrorException extends RuntimeException{
 	public SyntaxErrorException(){
