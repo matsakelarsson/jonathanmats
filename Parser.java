@@ -20,8 +20,8 @@ public class Parser{
 		st.nextToken();
 		if (st.ttype == st.TT_WORD) {
 			switch(st.sval) {
-				case "ans":
-					return new Variable("ans");
+				//case "ans":
+				//	return new Variable("ans");
 				case "vars":
 					return new Vars();
 				case "quit":
@@ -38,7 +38,7 @@ public class Parser{
 		st.nextToken();
 		if (st.ttype == '=') {
 			st.nextToken();
-			if (st.ttype == st.TT_WORD && st.sval.length() == 1) {
+			if (st.ttype == st.TT_WORD) {
 
 				ass = new Assignment(ass, new Variable(st.sval));
 			} else {
@@ -136,6 +136,8 @@ public class Parser{
 					return new Exp(factor());
 				case "log":
 					return new Log(factor());
+				case "ans":
+					return new Variable("ans");
 				default:
 					throw new SyntaxErrorException("Unknown expression");
 			}

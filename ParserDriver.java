@@ -30,7 +30,7 @@ class ParserDriver{
 
 				Sexpr evaluated = e.eval(variables);
 				System.out.println(evaluated.toString());
-				//(new Assignment(evaluated, new Variable("ans"))).eval(variables);
+				(new Assignment(evaluated, new Variable("ans"))).eval(variables);
 				}
 			}catch(SyntaxErrorException e){
 				System.out.print("Syntax Error: ");
